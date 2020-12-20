@@ -43,12 +43,12 @@ export const getUsers = (page,limit,selection) => async dispatch => {
     });
   } catch (err) {
     console.log(err)
-    console.log(err)
-    dispatch({
-      type: USERS_ERROR,
-      payload:err
+    console.log("err",err)
+    // dispatch({
+    //   type: USERS_ERROR,
+    //   payload:err
       
-    });
+    // });
   }
 };
 
@@ -169,7 +169,7 @@ console.log(userId,status)
 export const getNotifications = (page) => async dispatch => {
 
   try {
-    const res = await api.get(`/notifications/admin?page=${page}`);
+    const res = await api.get(`/notifications/admin?page=${page?page:1}`);
     console.log(res.data)
     dispatch({
       type: GET_NOTIFICATIONS,

@@ -40,6 +40,7 @@ export const register = (formData,history) => async dispatch => {
       type: REGISTER_SUCCESS,
       payload: res.data
     });
+    console.log("called")
     // dispatch(loadUser());
     history.push('/users')
 
